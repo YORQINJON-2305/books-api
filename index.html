@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Books</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header pt-4">
+    <div class="my-container">
+      <div class="logo-wrap d-flex align-items-center mb-4">
+        <img class="logo me-1" src="./icons/book-icon.svg" alt="">
+        <h2 class="main-title mb-0">Online<span class="title-orange">Books</span></h2>
+      </div>
+    </div>
+    <div class="header-end">
+        <div class="my-container">
+          <form action="#" method="post">
+            <div class="d-flex mb-2 mb-lg-3">
+              <input class="form-control me-2" type="search" placeholder="Search books...">
+              <button class="btn btn-outline-info">Find</button>
+            </div>
+            <div class="d-lg-flex">
+              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Sort by...">
+              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Year">
+              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Author">
+              <select class="form-select">
+                <option hidden>All</option>
+              </select>
+            </div>
+          </form>
+        </div>
+    </div>
+</header>
+
+<section class="books-section">
+  <div class="my-container">
+    <div class="books-list position-relative">
+        <img class="loader-img position-absolute translate-middle-x" src="./icons/loader.gif" alt="Infinite loader">
+    </div>
+  </div>
+</section>
+
+
+<!-- TEMPLATE -->
+<template class="books-template">
+  <div class="books-item">
+    <div class="d-flex justify-content-center mb-3">
+      <img class="books-img" src="images/things-fall-apart.jpg" width="160" height="180" alt="">
+    </div>
+    <h3 class="books-title mb-1">Things Fall Apart</h3>
+    <p class="books-author d-flex align-items-center mb-4">Chinua Achebe</p>
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <time class="books-year d-flex align-items-center me-2 me-xl-4" datetime="">1958</time>
+      <p class="books-pages d-flex align-items-center me-2 mb-0 me-xl-4">209</p>
+      <p class="books-language d-flex align-items-center mb-0">English</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="books-link d-flex align-items-center me-3" href="" target="blank">Wikipedia</a>
+      <p class="books-country d-flex align-items-center mb-0">Nigeria</p>
+    </div>
+  </div>
+</template>
+
+  <!-- scripts -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="/js/books.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

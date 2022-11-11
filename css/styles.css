@@ -1,0 +1,207 @@
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+    height: auto;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 20px;
+}
+
+body{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.my-container{
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+.site-header{
+    background-color: #F1F1F1CE;
+}
+
+.logo{
+    width: 40px;
+    height: 40px;
+}
+
+.title-orange{
+    color: #F07427;
+}
+
+.header-end{
+    padding: 40px 0;
+    background-color: #F5DEBFD8;
+}
+
+/* Books section */
+
+.books-section{
+    padding: 50px 0;
+    background-color: #F1F1F1CE;
+}
+
+.books-list{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-row-gap: 25px;
+    justify-content: center;
+}
+
+.loader-img{
+    left: 50%;
+    width: 100px;
+}
+
+.books-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 290px;
+    padding: 15px 20px;
+    border: 1px solid #f1cd91;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px 0 rgba(255, 203, 113, 0.91);
+}
+
+.books-author::before{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url("../icons/author-feather.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.books-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.books-year::before{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../icons/year.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.books-pages::before{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    background-image: url("../icons/pages.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.books-language::before{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    background-image: url("../icons/language.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.books-link{
+    font-style: italic;
+    text-decoration: none;
+
+}
+
+.books-link::before{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    background-image: url("../icons/wiki-logo.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+.books-country{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.books-country::before{
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-image: url("../icons/world.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: "";
+}
+
+@media only screen and (min-width: 768px) {
+    .books-list{
+        grid-template-columns: repeat(2, auto);
+        grid-column-gap: 15px;
+        justify-content: space-evenly;
+    }
+
+    .loader-img{
+        width: 130px;
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    .books-list{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .books-list{
+        grid-template-columns: repeat(4, auto);
+        justify-content: space-between;
+    }
+
+    .loader-img{
+        width: 170px;
+    }
+
+    .books-item{
+        max-width: 280px;
+    }
+}
