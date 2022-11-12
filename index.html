@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,27 +9,33 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
-<header class="site-header pt-4">
+  <!-- Header -->
+  <header class="site-header pt-4">
     <div class="my-container">
       <div class="logo-wrap d-flex align-items-center mb-4">
         <img class="logo me-1" src="./icons/book-icon.svg" alt="">
         <h2 class="main-title mb-0">Online<span class="title-orange">Books</span></h2>
+        <button class="btn btn-outline-warning ms-auto" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" type="button">Saved</button>
       </div>
     </div>
     <div class="header-end">
         <div class="my-container">
-          <form action="#" method="post">
+          <form class="search-form" action="#" method="post">
             <div class="d-flex mb-2 mb-lg-3">
-              <input class="form-control me-2" type="search" placeholder="Search books...">
-              <button class="btn btn-outline-info">Find</button>
+              <input class="search-input form-control me-2" type="search" placeholder="Search books...">
+              <button class="btn btn-info">Find</button>
             </div>
             <div class="d-lg-flex">
-              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Sort by...">
-              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Year">
-              <input class="form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Author">
-              <select class="form-select">
-                <option hidden>All</option>
+              <input class="input-year form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Year">
+              <input class="input-author form-control mb-2 mb-lg-0 me-lg-4" type="text" placeholder="Author">
+              <select class="sort-select form-select">
+                <option hidden>Sort by..</option>
+                <option value="a-z">A-z</option>
+                <option value="z-a">Z-a</option>
+                <option value="start-year">Start year</option>
+                <option value="end-year">End year</option>
+                <option value="few-sheets">Few sheets</option>
+                <option value="many-sheets">Many sheets</option>
               </select>
             </div>
           </form>
@@ -38,31 +43,63 @@
     </div>
 </header>
 
-<section class="books-section">
+  <!--Books-->
+  <section class="books-section">
   <div class="my-container">
     <div class="books-list position-relative">
         <img class="loader-img position-absolute translate-middle-x" src="./icons/loader.gif" alt="Infinite loader">
+        <!-- Books Template -->
     </div>
   </div>
 </section>
 
+  <!-- Bookmark modal -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header d-flex justify-content-end">
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="bookmark-wrap">
+      <!-- Bookmark Template -->
+    </div>
+  </div>
+</div>
 
-<!-- TEMPLATE -->
-<template class="books-template">
+  <!-- Bookmark template -->
+  <template class="bookmark-template">
+  <div class="bookmark-item d-sm-flex">
+    <div class="d-flex justify-content-center mb-2 mb-md-0 me-sm-2">
+      <img class="bookmark-img" src="" alt="">
+    </div>
+    <div class="d-flex flex-column justify-content-between">
+      <div>
+        <h3 class="bookmark-title"></h3>
+        <p class="books-author d-flex align-items-center mb-4"></p>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button class="bookmark-remove-btn justify-content-end btn btn-outline-danger">Remove</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+  <!-- TEMPLATE -->
+  <template class="books-template">
   <div class="books-item">
     <div class="d-flex justify-content-center mb-3">
-      <img class="books-img" src="images/things-fall-apart.jpg" width="160" height="180" alt="">
+      <img class="books-img" src="" width="160" height="180" alt="">
     </div>
-    <h3 class="books-title mb-1">Things Fall Apart</h3>
-    <p class="books-author d-flex align-items-center mb-4">Chinua Achebe</p>
+    <img class="bookmark-btn" src="./icons/star-border.svg" alt="">
+    <h3 class="books-title mb-1"></h3>
+    <h6 class="books-author d-flex align-items-center mb-4 fw-lighter"></h6>
     <div class="d-flex align-items-center justify-content-between mb-4">
-      <time class="books-year d-flex align-items-center me-2 me-xl-4" datetime="">1958</time>
-      <p class="books-pages d-flex align-items-center me-2 mb-0 me-xl-4">209</p>
-      <p class="books-language d-flex align-items-center mb-0">English</p>
+      <time class="books-year d-flex align-items-center me-2 me-xl-4" datetime=""></time>
+      <p class="books-pages d-flex align-items-center me-2 mb-0 me-xl-4"></p>
+      <p class="books-language d-flex align-items-center mb-0"></p>
     </div>
     <div class="d-flex justify-content-between align-items-center">
       <a class="books-link d-flex align-items-center me-3" href="" target="blank">Wikipedia</a>
-      <p class="books-country d-flex align-items-center mb-0">Nigeria</p>
+      <p class="books-country d-flex align-items-center mb-0"></p>
     </div>
   </div>
 </template>
